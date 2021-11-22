@@ -1,0 +1,29 @@
+@import '../snippets/rem-and-reset';
+
+.container {
+    width: 95%;
+    max-width: 55rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -2rem;
+    
+
+    .search {
+        font-size: 1.8rem;
+        border: 2px solid black;
+        outline: none;
+        border-radius: 50px;
+        height: 5rem;
+        width: 100%;
+        padding: 1rem 0 1rem 6rem;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    img {
+        width: 4.9rem;
+        position: absolute;
+        left: .1rem;
+        user-select: none;
+    }
+}

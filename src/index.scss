@@ -1,0 +1,17 @@
+@import './snippets/rem-and-reset';
+
+body {
+    background-color: #eeebd9;
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('./fonts/Pokemon Solid.ttf');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('./fonts/RobotoMono-VariableFont_wght.ttf');
+}
