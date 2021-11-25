@@ -1,0 +1,22 @@
+@import '../snippets/rem-and-reset';
+
+.poke__container {
+    display: block;
+    width: 90vw;
+    margin: 1rem auto;
+    font-family: 'Pokemon', monospace;
+
+    .each-poke {
+        height: fit-content;
+        max-height: 10rem;
+        margin-top: 1rem;
+        border: 1px solid red;
+
+
+        p {
+            font-size: 2rem;
+            color: #111;
+        }
+    }
+    
+}

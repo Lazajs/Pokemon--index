@@ -1,23 +1,11 @@
-import getPokemons from '../services/getPokemons'
-import { useEffect, useState, useRef } from 'react'
-import debounce from "just-debounce-it"
+import './Pokemon.scss'
 
+export default function Pokemon({name, sprites}) {
 
-export default function Pokemon() {
-    const [pokes, setPokes] = useState(null)
-    const input = useRef()
+    return <div className="each-poke">
+        {sprites && <img className="sprite" src={sprites.front_default} />}
+        <p>{name}</p>
+    </div>
 
-    useEffect(()=>{
-        getPokemons('pikachu','single').then(res=> setPokes(res))
-    },[])
-  
-    const handleChange =  debounce(()=>{getPokemons(input.current.value,'single').then(res => setPokes(res))},500)
-        
-    return (
-        <nav>
-            <input ref={input} onChange={handleChange} type="text"></input>
-        </nav>
-    )
-   
 }
 
