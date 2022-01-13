@@ -1,21 +1,27 @@
 import { useContext, useEffect } from "react"
 import pokemonList from "../context/pokemonList"
 import Pokemon from "./Pokemon"
-import getPokemons from "../services/getPokemons"
+import getPokemonNames from "../services/getPokemonNames"
+import Infinity from "./Infinity"
 
 export default function Main() {
-    const [pokes, setPokes] = useContext(pokemonList)
+    const [names, setNames] = useContext(pokemonList)
 
     useEffect(()=>{
-        getPokemons().then(res=> setPokes(res))
+        getPokemonNames().then(res=> setNames(res))
     },[])
+
+    useEffect(()=>{
+        console.log(names)
+    },[names])
 
     return (
         <main className="poke__container">
         {
-            pokes.results   ? pokes.results.map(e => <Pokemon key={e.name} {...e}/>) 
-                            : <Pokemon {...pokes} />        
+            names.results   ? names.results.map(e => <Pokemon key={e.name} name={e.name} url={e.url}/>) //information to fetch later 
+                            : <Pokemon poke={names}/> //pokemon info already fetched
         }
-        </main>
+        {/* <Infinity /> */}
+        </main> 
     )
 }

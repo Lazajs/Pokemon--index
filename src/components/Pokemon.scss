@@ -2,21 +2,55 @@
 
 .poke__container {
     display: block;
-    width: 90vw;
-    margin: 1rem auto;
+    min-width: 35rem;
+    width: 50vw;
+    margin: 5rem auto;
     font-family: 'Pokemon', monospace;
 
     .each-poke {
+        background: #eeebd9;
+        background: linear-gradient(145deg, #eeebd9 13%, rgba(255,0,0,0.700717787114846) 94%);
         height: fit-content;
         max-height: 10rem;
         margin-top: 1rem;
-        border: 1px solid red;
+        position: relative;
 
 
-        p {
-            font-size: 2rem;
-            color: #111;
+        img {
+            width: 10rem;
+            height: 10rem;
         }
+
+        .poke__name {
+            font-size: 2rem;
+            display: inline-block;
+            color: #111;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .types__container {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 10rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+
+            .types {
+                font-size: 2rem;
+                display: inline-block;
+                color: #fff;
+                font-family: 'Roboto Mono';
+                z-index: 10;
+                font-weight: 700;
+            }
+        } 
     }
     
 }

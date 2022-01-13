@@ -4,10 +4,9 @@ import { useState } from "react"
 const pokemonList = createContext({})
 
 export function PokemonContext({children}) {
-    const [pokes, setPokes] = useState({})
+    const [names, setNames] = useState([])
 
-
-    return <pokemonList.Provider value={[pokes,setPokes]}>
+    return <pokemonList.Provider value={[names,setNames]}>
         {children}
     </pokemonList.Provider>
 }

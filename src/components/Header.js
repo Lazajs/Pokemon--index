@@ -5,12 +5,12 @@ import { useContext } from "react"
 import pokemonList from "../context/pokemonList"
 
 export default function Header() {
-    const [pokes, setPokes] = useContext(pokemonList)
+    const [names, setNames] = useContext(pokemonList)
     
     return (
     <header className="header">
         <img className="logo" src={pokemon}/>
-        <Search pokes={pokes} setPokes={setPokes}/>
+        <Search names={names} setNames={setNames}/>
     </header>
     )
 }

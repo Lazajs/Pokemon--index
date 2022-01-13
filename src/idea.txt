@@ -1,0 +1,7 @@
+Modularizar el fetch para buscar todos los pokemon, y solo uno
+
+Agregar observer a Infinity component
+
+Arreglar posición de los tipos
+
+QUEDE TOCANDO EN POKEMON PORQUE AHORA SOLO FETCH NOMBRES 
