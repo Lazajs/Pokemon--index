@@ -1,5 +1,4 @@
 .card {
-    background-color: #faa0;
     height: 80rem;
     width: 100vw;
     max-width: 60rem;
@@ -41,13 +40,8 @@
         margin-top: 1rem;
     }
 
-    .information {
-        margin-top: 3rem;
-
-        p {
-            text-align: left;
-            font-size: 2rem;
-            margin: 1rem 0 0 2rem;
-        }
+    .bottom {
+        display: flex;
+        justify-content: space-between;
     }
 }

@@ -6,6 +6,8 @@ import getPokemonNames from '../../services/getPokemonNames'
 import Spinner from '../Spinner'
 import noshiny from '../../images/noshiny.svg'
 import shiny from '../../images/shiny.svg'
+import CommonStats from './CommonStats'
+import GameStats from './GameStats'
 
 export default function Stats() {
     const {pokeName} = useParams()
@@ -41,9 +43,9 @@ export default function Stats() {
                 </span>
                 <h1 className='name'>{pokemon.name}</h1>
                 <span className='types'>{pokemon.types.map(e => <h1>{e.type.name}</h1>)}</span>
-                <div className="information">
-                    <p>Weight: <strong>{pokemon.weight}</strong></p>
-                    <p>Base experience: <strong>{pokemon.base_experience}</strong></p>
+                <div className='bottom'>
+                    <CommonStats weight={pokemon.weight} height={pokemon.height} order={pokemon.order} basexp={pokemon.base_experience} />
+                    <GameStats stats={pokemon.stats} ability={pokemon.abilities} />
                 </div>
             </div>
             : <Spinner />

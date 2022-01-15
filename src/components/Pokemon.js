@@ -2,6 +2,7 @@ import './Pokemon.scss'
 import { useEffect, useState } from 'react'
 import getSinglePokemon from '../services/getSinglePokemon'
 import { Link } from 'react-router-dom'
+import Spinner from './Spinner'
 
 export default function Pokemon({poke,name,url}) {
     const [info, setInfo] = useState(false)
@@ -12,6 +13,7 @@ export default function Pokemon({poke,name,url}) {
     },[])
 
     return <Link to={`/pokemon/${name || info.name}`}>
+    {info ? 
         <div className="each-poke">
             {info.sprites ? <img className="sprite" src={info.sprites.front_default} /> : ''}
             <p className="poke__name">{name || info.name}</p>   
@@ -19,6 +21,7 @@ export default function Pokemon({poke,name,url}) {
                 { info.types ? info.types.map(e => <p key={e.slot} className="types">{e.type.name}</p>) : ''}
             </div>
         </div>
+        : <Spinner />}
     </Link>
 
 }
