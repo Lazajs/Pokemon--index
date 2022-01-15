@@ -2,7 +2,7 @@ import Header from "./components/Header"
 import Main from "./components/Main"
 import { PokemonContext } from "./context/pokemonList"
 import {Route, Routes} from "react-router-dom"
-import Stats from "./components/Stats"
+import Stats from "./components/stats/Stats"
 
 export default function App() {
   return (

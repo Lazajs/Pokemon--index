@@ -11,10 +11,6 @@ export default function Main() {
         getPokemonNames().then(res=> setNames(res))
     },[])
 
-    useEffect(()=>{
-        console.log(names)
-    },[names])
-
     return (
         <main className="poke__container">
         {

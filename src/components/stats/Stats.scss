@@ -1,0 +1,53 @@
+.card {
+    background-color: #faa0;
+    height: 80rem;
+    width: 100vw;
+    max-width: 60rem;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    position: relative;
+    border: 2px solid #000;
+    background-image: linear-gradient(to right, #ffd4d4, #ffbcbb, #ffa3a2, #ff8988, #ff6e6e);    // justify-content: center;
+
+    .images {
+        .sprite {
+            width: 30rem;
+            margin: auto;
+        }
+
+        .special {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 5rem;
+        }
+    }
+    
+
+    .name {
+        margin-top: -4rem;
+        font-weight: 700;
+        font-size: 3rem;
+        font-family: 'Pokemon', monospace;
+        color: #f00c;
+    }
+
+    .types {
+        font-family: 'Roboto mono';
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+
+    .information {
+        margin-top: 3rem;
+
+        p {
+            text-align: left;
+            font-size: 2rem;
+            margin: 1rem 0 0 2rem;
+        }
+    }
+}
