@@ -9,7 +9,6 @@ export default function Search({setNames}) {
     const input = useRef()
 
     const handleChange = ()=>{
-        console.log(input.current.value)
         getPokemonNames(input.current.value).then(res => {
             setNames(res)
         })
