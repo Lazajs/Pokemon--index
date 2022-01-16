@@ -10,7 +10,7 @@ export default function Search({setNames}) {
 
     const handleChange = ()=>{
         getPokemonNames(input.current.value).then(res => {
-            setNames(res)
+            setNames(res.results ? res.results : res)
         })
     }
 
