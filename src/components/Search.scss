@@ -39,7 +39,6 @@ $secondary: #DAD6C4;
         button {
             display: inline-block;
             width: 10rem;
-            padding: 2rem;
             border:none;
             background-color: transparent;
             color: #ffCb05;
@@ -49,11 +48,6 @@ $secondary: #DAD6C4;
             right: 0;
             z-index: 99;
             font-family: 'Press Start 2P';
-
-
-            &:active {
-                background-color: #f00;
-            }
         }
     }
 
