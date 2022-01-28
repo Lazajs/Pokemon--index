@@ -1,5 +1,7 @@
 @import '../snippets/rem-and-reset';
 
+$secondary: #DAD6C4;
+
 .poke__container {
     display: block;
     min-width: 35rem;
@@ -8,8 +10,7 @@
     font-family: 'Pokemon', monospace;
 
     .each-poke {
-        background: #eeebd9;
-        background: linear-gradient(145deg, #eeebd9 13%, rgba(255,0,0,0.700717787114846) 94%);
+        background: $secondary;
         height: fit-content;
         max-height: 10rem;
         margin-top: 1rem;
@@ -22,12 +23,23 @@
         }
 
         .poke__name {
-            font-size: 2rem;
+            font-family: 'Staatliches';
+            font-size: 4rem;
             display: inline-block;
             color: #111;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+        }
+
+        strong {
+            display: inline-block;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color:  #f00;
+            font-size: 1.8rem;
+            font-family: 'Press Start 2P';
         }
 
         .types__container {

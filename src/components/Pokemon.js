@@ -17,12 +17,13 @@ export default function Pokemon({poke,name,url}) {
         <div className="each-poke">
             {info.sprites ? <img className="sprite" src={info.sprites.front_default} /> : ''}
             <p className="poke__name">{name || info.name}</p>   
-            <div className="types__container">
-                { info.types ? info.types.map(e => <p key={e.slot} className="types">{e.type.name}</p>) : ''}
-            </div>
+            <strong> {'>>'} </strong>
         </div>
         : <Spinner />}
     </Link>
 
 }
 
+{/* <div className="types__container">
+    { info.types ? info.types.map(e => <p key={e.slot} className="types">{e.type.name}</p>) : ''}
+</div> */}
