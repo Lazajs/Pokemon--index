@@ -10,8 +10,8 @@ export default function Header() {
 
     return (
     <header className="header">
-        {/* <h1 className='title'>POK<br/>EFY</h1> */}
         <img className='pokefy' src={pokefy} />
+
         <Routes><Route path='/' element={<Search names={names} setNames={setNames}/>}/></Routes>
     </header>
     )
