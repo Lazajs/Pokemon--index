@@ -1,7 +1,7 @@
 @import './snippets/rem-and-reset';
 
 body {
-    background-color: #eeebd9;
+    background-color: #F8F3E2;
     overflow-x: hidden;
 }
 
@@ -15,4 +15,9 @@ body {
 @font-face {
     font-family: 'Roboto Mono';
     src: url('./fonts/RobotoMono-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('./fonts/PressStart.ttf');
 }

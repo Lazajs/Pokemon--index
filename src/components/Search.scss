@@ -1,5 +1,7 @@
 @import '../snippets/rem-and-reset';
 
+$secondary: #DAD6C4;
+
 .container {
     width: 95%;
     max-width: 55rem;
@@ -11,19 +13,21 @@
 
     .search {
         font-size: 1.8rem;
-        border: 2px solid black;
+        border:none;
         outline: none;
-        border-radius: 50px;
         height: 5rem;
-        width: 100%;
+        width: 95%;
         padding: 1rem 0 1rem 6rem;
+        background-color: $secondary;
         font-family: 'Roboto Mono', monospace;
     }
 
     img {
-        width: 4.9rem;
+        background-color: transparent;
+        width: 4rem;
         position: absolute;
-        left: .1rem;
+        top: .2rem;
+        left: 1.6rem;
         user-select: none;
     }
 
@@ -35,14 +39,17 @@
         button {
             display: inline-block;
             width: 10rem;
-            border-radius: 50px;
-            border: 2px solid #000;
+            border: 1px solid #000;
             background-color: #f00c;
             color: #fff;
             height: 100%;
             position: absolute;
             right: 0;
             z-index: 99;
+
+            &:active {
+                background-color: #f00;
+            }
         }
     }
 

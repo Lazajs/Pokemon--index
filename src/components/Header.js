@@ -1,5 +1,4 @@
 import './Header.scss'
-import pokemon from '../images/pokemon.svg'
 import Search from './Search'
 import { useContext } from "react"
 import pokemonList from "../context/pokemonList"
@@ -10,7 +9,7 @@ export default function Header() {
 
     return (
     <header className="header">
-        <img className="logo" src={pokemon}/>
+        <h1 className='title'>POK<br/>EFY</h1>
         <Routes><Route path='/' element={<Search names={names} setNames={setNames}/>}/></Routes>
     </header>
     )
