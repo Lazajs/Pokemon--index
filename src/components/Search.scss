@@ -39,13 +39,17 @@ $secondary: #DAD6C4;
         button {
             display: inline-block;
             width: 10rem;
-            border: 1px solid #000;
-            background-color: #f00c;
-            color: #fff;
+            padding: 2rem;
+            border:none;
+            background-color: transparent;
+            color: #ffCb05;
+            font-size: 1.3rem;
             height: 100%;
             position: absolute;
             right: 0;
             z-index: 99;
+            font-family: 'Press Start 2P';
+
 
             &:active {
                 background-color: #f00;
