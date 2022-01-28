@@ -26,4 +26,25 @@
         left: .1rem;
         user-select: none;
     }
+
+    button {
+        display: none;
+    }
+
+    @media (max-width: 580px) {
+        button {
+            display: inline-block;
+            width: 10rem;
+            border-radius: 50px;
+            border: 2px solid #000;
+            background-color: #f00c;
+            color: #fff;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            z-index: 99;
+        }
+    }
+
+    
 }

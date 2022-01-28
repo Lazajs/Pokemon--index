@@ -11,15 +11,21 @@ export default function Search({setNames}) {
     const handleChange = ()=>{
         getPokemonNames(input.current.value).then(res => {
             setNames(res.results ? res.results : res)
-        })
+        }).catch(console.log)
     }
 
     const handleChangeDebounced = debounce(()=> handleChange() ,500)
     
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     handleChangeDebounced()
+    // }
+
     return (
         <div className="container">
             <img draggable="false" src={pokeball}/>
-            <input placeholder="Search for a pokemon" className="search" ref={input} onChange={handleChangeDebounced} type="text"></input>
+           <input onFocus={handleChangeDebounced} placeholder="Find pokemon" className="search" ref={input} onSubmit={handleChangeDebounced} onChange={handleChangeDebounced}  type="text"></input>
+           <button onClick={handleChangeDebounced}>Search</button>
         </div>
     )
 }

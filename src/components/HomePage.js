@@ -10,12 +10,23 @@ export default function HomePage() {
     const [count, setCount] = useState(-10)
 
      useEffect(()=>{
-        getPokemonNames(false, count).then(res=> setNames(res.results))
+        getPokemonNames(false, 0).then(res=> setNames(res.results)).catch(console.log)
     },[])
 
+    // useEffect(()=>{
+    //     if(!names) getPokemonNames(false, count).then(res=> setNames(res.results)).catch(console.log)
+    // }, [names])
+
     useEffect(()=>{
-        console.log(names.results)
-        getPokemonNames(false, count).then(res=> setNames(names.concat(res.results)))
+        getPokemonNames(false, count).then(res=> {
+            if (Array.isArray(names)) {
+                setNames(names.concat(res.results))
+            } else {
+                setNames(res.results || res)
+                // setCount(-10)
+            }
+                
+        }).catch(console.log)
     },[count])
 
     return <>

@@ -5,7 +5,7 @@ export default function Infinity({counter,names}) {
     const infinite = useRef() 
 
     const handleObserver = ([e])=>{
-        if (e.isIntersecting && names) counter(prev => prev + 10)
+        if (e.isIntersecting && Array.isArray(names)) counter(prev => prev + 10)
     }
 
 

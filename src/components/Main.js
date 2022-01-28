@@ -1,7 +1,6 @@
 import Pokemon from "./Pokemon"
 
 export default function Main({names}) {
-    console.log(names)
     return (
         <main className="poke__container">
         {
