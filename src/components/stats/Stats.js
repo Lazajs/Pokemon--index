@@ -20,8 +20,6 @@ export default function Stats() {
         })
     },[])
 
-    useEffect(()=> {console.log(pokemon)},[pokemon])
-
     useEffect(() => {
         if(pokemon.sprites) setSprite(prev => {return {shiny: prev.shiny ,url:pokemon.sprites.front_default}})
     }, [pokemon.sprites])
@@ -42,7 +40,7 @@ export default function Stats() {
                     <img className='sprite' onClick={changeSprite} src={sprite.url}  /> 
                 </span>
                 <h1 className='name'>{pokemon.name}</h1>
-                <span className='types'>{pokemon.types.map(e => <h1>{e.type.name}</h1>)}</span>
+                <span className='types'>{pokemon.types.map((e,i) => <h1 key={i}>{e.type.name}</h1>)}</span>
                 <div className='bottom'>
                     <CommonStats weight={pokemon.weight} height={pokemon.height} order={pokemon.order} basexp={pokemon.base_experience} />
                     <GameStats stats={pokemon.stats} ability={pokemon.abilities} />
