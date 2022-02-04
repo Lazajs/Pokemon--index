@@ -9,7 +9,11 @@ export default function Infinity({counter,names}) {
     }
 
 
-    const observer = new IntersectionObserver(handleObserver)
+    const observer = new IntersectionObserver(handleObserver,
+    {
+        rootMargin: '80px',
+        threshold: 1.0
+    })
 
     useEffect(()=>{
         observer.observe(infinite.current)

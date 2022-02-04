@@ -21,7 +21,6 @@ export default function Search({setNames}) {
         <div className="container">
             <img draggable="false" src={pokeball}/>
             <input placeholder="Find pokemon" className="search" ref={input} onChange={handleChangeDebounced}  type="text"></input>
-           <button onClick={handleChangeDebounced}>Search</button>
         </div>
     )
 }
