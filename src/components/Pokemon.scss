@@ -18,12 +18,23 @@ $secondary: #E5E0CD;
         position: relative;
         box-shadow: 0px 4px 4px #000000;
         
-
+        &.active {
+            max-height: none;
+            height: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
 
         img {
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
+
+            &.active {
+                height: 15rem;
+                width: 15rem;
+            }
         }
 
         .poke__name {
@@ -44,6 +55,12 @@ $secondary: #E5E0CD;
             color:  #f00;
             font-size: 1.8rem;
             font-family: 'Press Start 2P';
+        }
+
+        .flavor {
+            width: 50%;
+            text-align: center;
+            font-family: 'Staatliches', sans-serif;
         }
     }
     
