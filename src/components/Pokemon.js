@@ -47,7 +47,7 @@ export default function Pokemon({poke,name,url}) {
             let total =  el.style.transform
             total = total.substring(total.indexOf('(')+1, total.indexOf('p') )
             
-            if(parseInt(total) >= 200) {
+            if(parseInt(total) >= 150) {
                 navigate(`/pokemon/${name || info.name}`)
             } else {
                 el.style.transform = 'none'
