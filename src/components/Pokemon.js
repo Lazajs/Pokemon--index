@@ -1,11 +1,14 @@
 import './Pokemon.scss'
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
 import getSinglePokemon from '../services/getSinglePokemon'
 import getPokemonFlavor from '../services/getPokemonFlavor'
+import Hammer from 'react-hammerjs'
+import {useNavigate} from 'react-router-dom'
 
 export default function Pokemon({poke,name,url}) {
     const [info, setInfo] = useState(false)
     const [flavour, setFlavour] = useState()
+    const navigate = useNavigate()
 
     useEffect(()=>{   
         // pokeinfo fetching 
@@ -13,39 +16,69 @@ export default function Pokemon({poke,name,url}) {
         else setInfo(poke)
     },[])
 
-    const openCard = ()=>{ 
+    const handleTap = ()=>{ 
         //click handler, text flavour fetching
         if (flavour) setFlavour(null)
         else {
             getPokemonFlavor(info.species.url)
             .then(res => {
                 setFlavour(res[0])
-                // setFlavour(res)
             })
         }
     }
+
+    const translateEl = (el, px)=>{ 
+        // translation animation 
+        let rect = el.getBoundingClientRect()
+        let x = px - rect.left
+        el.style.transform = `translateX(${x + 'px'})`
+        
+    }
+
+    const handlePan = (evt)=>{
+        // on user swipe
+        if (evt.additionalEvent === 'panright' && evt.target.nodeName === 'DIV') translateEl(evt.target, evt.srcEvent.clientX)   
+    } 
+
+    const handleEnd = (evt)=>{
+        // on end of swipe
+        if (evt.target.nodeName === 'DIV') {
+            let el = evt.target 
+            let total =  el.style.transform
+            total = total.substring(total.indexOf('(')+1, total.indexOf('p') )
+            
+            if(parseInt(total) >= 300) {
+                navigate(`/pokemon/${name || info.name}`)
+            } else {
+                el.style.transform = 'none'
+            }
+        }
+    }
+
     // `/pokemon/${name || info.name}`
-    // https://www.npmjs.com/package/react-easy-swipe
 
     if (!flavour) {
         // return the closed card
         return <>
         {info ? 
-            <div className="each-poke" onClick={openCard}>
-                {info.sprites ? <img className="sprite" src={info.sprites.front_default} /> : ''}
-                <p className="poke__name">{name || info.name}</p>   
-                <strong> {'>>'} </strong>
-            </div>
+            <Hammer onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}>
+                <div className="each-poke">
+                    {info.sprites ? <img draggable='false' className="sprite" src={info.sprites.front_default} /> : ''}
+                    <p className="poke__name">{name || info.name}</p>   
+                    <strong> {'>>'} </strong>
+                </div>
+            </Hammer>
             : ''}</>
     } else {
         // return the open card
-        return <> 
-            <div className="each-poke active" onClick={openCard}>
-                <img className="sprite active" src={info.sprites.front_default}/>
-                <p className='flavor'>{flavour.flavor_text}</p>
-            </div>
+        return <>
+            <Hammer onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}> 
+                <div className="each-poke active">
+                    <img draggable='false' className="sprite active" src={info.sprites.front_default}/>
+                    <p className='flavor'>{flavour.flavor_text}</p>
+                </div>
+            </Hammer>
             </>
-
     }
 
 }
