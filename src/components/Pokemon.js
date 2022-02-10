@@ -37,22 +37,22 @@ export default function Pokemon({poke,name,url}) {
 
     const handlePan = (evt)=>{
         // on user swipe
-        if (evt.additionalEvent === 'panright' && evt.target.nodeName === 'DIV') translateEl(evt.target, evt.srcEvent.clientX)   
+        if (evt.additionalEvent === 'panright') translateEl(evt.target, evt.srcEvent.clientX)   
     } 
 
     const handleEnd = (evt)=>{
         // on end of swipe
-        if (evt.target.nodeName === 'DIV') {
+
             let el = evt.target 
             let total =  el.style.transform
             total = total.substring(total.indexOf('(')+1, total.indexOf('p') )
             
-            if(parseInt(total) >= 300) {
+            if(parseInt(total) >= 200) {
                 navigate(`/pokemon/${name || info.name}`)
             } else {
                 el.style.transform = 'none'
             }
-        }
+        
     }
 
     // `/pokemon/${name || info.name}`
@@ -61,7 +61,7 @@ export default function Pokemon({poke,name,url}) {
         // return the closed card
         return <>
         {info ? 
-            <Hammer onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}>
+            <Hammer onPressUp={handleEnd} onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}>
                 <div className="each-poke">
                     {info.sprites ? <img draggable='false' className="sprite" src={info.sprites.front_default} /> : ''}
                     <p className="poke__name">{name || info.name}</p>   
@@ -72,7 +72,7 @@ export default function Pokemon({poke,name,url}) {
     } else {
         // return the open card
         return <>
-            <Hammer onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}> 
+            <Hammer onPressUp={handleEnd} onTap={handleTap} onPanCancel={handleEnd} onPanEnd={handleEnd} onPan={handlePan}> 
                 <div className="each-poke active">
                     <img draggable='false' className="sprite active" src={info.sprites.front_default}/>
                     <p className='flavor'>{flavour.flavor_text}</p>

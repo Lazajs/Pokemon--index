@@ -8,7 +8,6 @@ $secondary: #E5E0CD;
     width: 50vw;
     margin: 5rem auto;
     font-family: 'Pokemon', monospace;
-    user-select: none;
 
     .each-poke {
         background: $secondary;
@@ -33,7 +32,7 @@ $secondary: #E5E0CD;
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
-            user-select: none;
+            pointer-events: none;
 
             &.active {
                 height: 15rem;
@@ -49,7 +48,7 @@ $secondary: #E5E0CD;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            user-select: none;
+            pointer-events: none;
         }
 
         strong {
@@ -60,14 +59,14 @@ $secondary: #E5E0CD;
             color:  #f00;
             font-size: 1.8rem;
             font-family: 'Press Start 2P';
-            user-select: none;
+            pointer-events: none;
         }
 
         .flavor {
             width: 50%;
             text-align: center;
             font-family: 'Staatliches', sans-serif;
-            user-select: none;
+            pointer-events: none;
         }
     }
     
