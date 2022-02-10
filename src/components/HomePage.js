@@ -6,9 +6,7 @@ import getPokemonNames from "../services/getPokemonNames";
 
 
 export default function HomePage() {
-    const [names, setNames] = useContext(pokemonList)
-    const [count, setCount] = useState(-10)
-
+    const [names, setNames, count, setCount] = useContext(pokemonList)
     
     useEffect(()=>{
         getPokemonNames(false, count).then(res=> {

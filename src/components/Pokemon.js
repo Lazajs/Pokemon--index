@@ -76,6 +76,7 @@ export default function Pokemon({poke,name,url}) {
                 <div className="each-poke active">
                     <img draggable='false' className="sprite active" src={info.sprites.front_default}/>
                     <p className='flavor'>{flavour.flavor_text}</p>
+                    <strong> {'>>'} </strong>
                 </div>
             </Hammer>
             </>
