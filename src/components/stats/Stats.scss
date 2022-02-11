@@ -1,47 +1,63 @@
 .card {
+    margin-top: 6rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     height: fit-content;
-    width: 100vw;
+    width: 95vw;
     max-width: 60rem;
-    margin: 1rem auto;
     padding: 0 1rem 3rem 0;
     text-align: center;
     position: relative;
-    border: 2px solid #000;
-    background-image: linear-gradient(to right, #ffd4d4, #ffbcbb, #ffa3a2, #ff8988, #ff6e6e);    // justify-content: center;
+    border: 20px solid #FFD946;
+    border-radius: 10px;
+    background: #F8F3E2;   // justify-content: center;
+    overflow-x: hidden;
+    
+    .name {
+        font-weight: 700;
+        font-size: 2.5rem;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: 'Press Start 2P', monospace;
+        color: #042C47;
+        margin: 2rem;
+    }
 
     .images {
-        .sprite {
-            width: 30rem;
-            margin: auto;
-        }
-
         .special {
             position: absolute;
-            left: 1rem;
+            right: 1rem;
             top: 1rem;
             width: 5rem;
         }
+
+        .sprite {
+            width: 30rem;
+            margin: auto;
+            margin-top: -5rem;
+        }
     }
     
-
-    .name {
-        margin-top: -4rem;
-        font-weight: 700;
-        font-size: 3rem;
-        font-family: 'Pokemon', monospace;
-        color: #f00c;
-    }
-
     .types {
-        font-family: 'Roboto mono';
-        font-size: 2.5rem;
-        display: flex;
-        justify-content: space-around;
+        font-family: 'Press Start 2P';
+        font-size: 1.8rem;
+        color: #CDCBCB;
         margin-top: 1rem;
+        height: 2rem;
+        white-space: nowrap;
+        text-transform: uppercase;
+
+        p {
+            display: inline-block; 
+            margin: 1rem;
+        }
     }
 
     .bottom {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
     }
 }

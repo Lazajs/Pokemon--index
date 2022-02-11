@@ -1,6 +1,5 @@
 import './Stats.scss'
 import {useParams} from 'react-router-dom'
-import Back from './Back'
 import { useEffect, useState } from 'react'
 import getPokemonNames from '../../services/getPokemonNames'
 import Spinner from '../Spinner'
@@ -30,17 +29,24 @@ export default function Stats() {
         else setSprite({shiny: false, url: pokemon.sprites.front_default})
     }
 
+    const multiType = (arr)=>{
+        let types = arr.concat(arr)
+        while (types.length < 15) {
+            types = types.concat(arr)
+        }
+        return types
+    }
+
     return <>
-        <Back /> 
         {
             pokemon && pokemon.sprites && pokemon.types ? 
             <div className='card'>
+                <h1 className='name'>{pokemon.name}</h1>
                 <span className='images'>
                     <img className='special' onClick={changeSpriteShiny} src={sprite.shiny ? shiny : noshiny} />
                     <img className='sprite' onClick={changeSprite} src={sprite.url}  /> 
                 </span>
-                <h1 className='name'>{pokemon.name}</h1>
-                <span className='types'>{pokemon.types.map((e,i) => <h1 key={i}>{e.type.name}</h1>)}</span>
+                <span className='types'>{multiType(pokemon.types).map((e,i) => <p key={i}>{e.type.name}</p>)}</span>
                 <div className='bottom'>
                     <CommonStats weight={pokemon.weight} height={pokemon.height} order={pokemon.order} basexp={pokemon.base_experience} />
                     <GameStats stats={pokemon.stats} ability={pokemon.abilities} />

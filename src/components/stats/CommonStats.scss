@@ -1,17 +1,29 @@
 .information {
     margin-top: 3rem;
-    width: 50%;
-    font-family: 'Pokemon', monospace;
+    font-family: 'Staatliches', monospace;
+    background-color: #E5E1D0;
+    position: relative;
+    width: 98%;
 
     h1 {
-        font-size: 2.2rem;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 1rem;
     }
 
     p {
         text-align: left;
-        font-size: 1.8rem;
-        margin: 2rem 0 0 3rem;
+        font-size: 2rem;
         line-height: 2;
-        color: #000a;
+        color: #042C47;
+        margin-left: 10rem;
+        font-weight: 700;
+        line-height: 1.5;
+
+        strong {
+            position: absolute;
+            right: 13rem;
+        }
     }
 }

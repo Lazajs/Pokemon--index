@@ -1,7 +1,8 @@
 .back {
+    width: 5rem;
+    height: 5rem;
     position: absolute;
-    width: 6rem;
-    height: 6rem;
-    top: 2rem;
-    left: 2rem;
+    top: 17rem;
+    left:50%;
+    transform: translateX(-50%);
 }

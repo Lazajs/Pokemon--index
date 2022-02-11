@@ -1,17 +1,60 @@
+
 .stats {
     margin-top: 3rem;
-    width: 50%;
-    font-family: 'Pokemon', monospace;
+    font-family: 'Staatliches', monospace;
+    background-color: #E5E1D0;
+    position: relative;
+    width: 98%;
+    padding-bottom: 5rem;
 
-        h1 {
-            font-size: 2.2rem;
+    h1 {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        text-align: left;
+        font-size: 2rem;
+        line-height: 2;
+        color: #042C47;
+        margin-left: 10rem;
+        font-weight: 700;
+        line-height: 1.5;
+
+        .abilities {
+            position: absolute;
+            right: 5rem;
+            display: inline-flex;
+            flex-direction: column;
         }
 
-        p {
-            text-align: left;
-            font-size: 1.8rem;
-            margin: 2rem 0 0 3rem;
-            line-height: 1.5;
-            color: #000a;
+        strong {
+            position: absolute;
+            right: 13rem;
         }
+    }
 }
+
+
+
+
+
+// .stats {
+//     margin-top: 3rem;
+//     width: 50%;
+//     font-family: 'Pokemon', monospace;
+
+//         h1 {
+//             font-size: 2.2rem;
+//         }
+
+//         p {
+//             text-align: left;
+//             font-size: 1.8rem;
+//             margin: 2rem 0 0 3rem;
+//             line-height: 1.5;
+//             color: #000a;
+//         }
+// }

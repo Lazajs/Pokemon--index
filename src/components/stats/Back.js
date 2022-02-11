@@ -1,5 +1,5 @@
 import './Back.scss'
-import back from '../../images/back.svg'
+import back from '../../images/re-pokeball.png'
 import { Link } from 'react-router-dom'
 
 export default function Back() {
