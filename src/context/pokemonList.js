@@ -1,4 +1,4 @@
-import {createContext} from 'react'
+import {createContext, useEffect} from 'react'
 import { useState } from "react"
 
 const pokemonList = createContext({})
@@ -6,6 +6,10 @@ const pokemonList = createContext({})
 export function PokemonContext({children}) {
     const [names, setNames] = useState([])
     const [count, setCount] = useState(-10)
+
+    useEffect(()=>{
+        console.log(names)
+    }, [names])
 
     return <pokemonList.Provider value={[names,setNames, count, setCount]}>
         {children}
