@@ -17,7 +17,11 @@ export default function Infinity({counter,names}) {
 
     useEffect(()=>{
         observer.observe(infinite.current)
+
+        return () => observer.disconnect()
     },[])
+
+    
 
     return <div ref={infinite} className="infinity"></div>
 }

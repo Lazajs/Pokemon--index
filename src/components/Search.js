@@ -4,12 +4,13 @@ import getPokemonNames from '../services/getPokemonNames'
 import { useRef } from 'react'
 import debounce from "just-debounce-it"
 
-
 export default function Search({setNames}) {
     const input = useRef()
 
     const handleChange = ()=>{
-        getPokemonNames(input.current.value).then(res => {
+        let search = input.current.value.trim().toLowerCase() || ''
+
+        getPokemonNames(search).then(res => {
             setNames(res.results ? res.results : res)
         }).catch(console.log)
     }

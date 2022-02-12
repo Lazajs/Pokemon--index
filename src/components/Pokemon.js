@@ -12,8 +12,8 @@ export default function Pokemon({poke, url}) {
 
     useEffect(()=>{   
         // pokeinfo fetching 
-        if (!poke) getSinglePokemon(url).then(e => setInfo(e))
-        else setInfo(poke)
+        if (poke) setInfo(poke) 
+        else getSinglePokemon(url).then(e => setInfo(e))
     },[])
 
     const handleTap = ()=>{ 

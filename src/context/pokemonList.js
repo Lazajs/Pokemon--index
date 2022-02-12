@@ -8,8 +8,8 @@ export function PokemonContext({children}) {
     const [count, setCount] = useState(-10)
 
     useEffect(()=>{
-        console.log(names)
-    }, [names])
+        console.log(count)
+    },[count])
 
     return <pokemonList.Provider value={[names,setNames, count, setCount]}>
         {children}
