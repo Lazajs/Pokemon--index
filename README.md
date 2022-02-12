@@ -12,6 +12,6 @@
 <h2>Link to POKEFY:</h2>
 
 <ul>
-    <li><a href="pokefy.vercel.app"><strong>POKEFY</strong></a></li>
+    <li><a target="_blank" href="https://pokefy.vercel.app/"><strong>POKEFY</strong></a></li>
 </ul>
 
