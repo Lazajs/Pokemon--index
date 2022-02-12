@@ -9,3 +9,9 @@
 
 <strong><i>Keep in mind that there may be some basic mistakes in the code or may not have the best readability due to the fact that I'm new to React. I accept any recommendations to get better.</i></strong>
 
+<h2>Link to POKEFY:</h2>
+
+<ul>
+    <li><a href="pokefy.vercel.app"><strong>POKEFY</strong></a></li>
+</ul>
+
